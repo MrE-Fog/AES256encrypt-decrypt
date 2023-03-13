@@ -31,6 +31,8 @@ File.open('iv.txt', 'w') { |file| file.write(iv) }
 
 File.open('new_encrypted.txt', 'w') { |file| file.write(encrypted) }
 
+File.open('key1.txt', 'w') { |file| file.write(Base64.strict_encode64(key)) }
+
 # Start with a new cipher
 cipher = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
 
